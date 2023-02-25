@@ -25,14 +25,6 @@ int main() {
 int Game() {
 	int input = 0;
 	int status = 0;
-
-	//something that switches player from 1 to 2;
-	//player 1 is X, player 2 is O;
-	//input : 1-9 
-	//check for invalid input (check if number 1-9)
-	//send that to draw
-	//draw check if over, win or draw
-
 	
 	while (1) {
 
