@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise 9</title>
+		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
+		<link rel="stylesheet" type="text/css" href="/styles/managepto.css"/>
+		<link rel="stylesheet" type="text/css" href="/styles/stylePTO.css"/>
+		<link rel="stylesheet" type="text/css" href="./styles/normalize.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+	</head>
+	<body onload="checkCookie()">
+		<header>
+			<div id="header-links-container">
+				<a href="index.html" id="pto_title">PTO MANAGER</a>
+			</div>
+			<div id="sign-in-menu">
+				<i class="fa fa-solid fa-circle" id="login-button"></i>
+				<p id="sign-in-label">Login</p>
+			</div>
+		</header>
+
+		<main>
+			<div class="welcome-page">
+				<h1>Welcome stranger</h1>
+				<h1>Please sign in</h1>
+			</div>
+			<div id="container">
+
+				<div id="sign-in-form">
+					<form action="">
+						<h1>Sign in</h1>
+						<div class="form-group">
+						  <label for="email" class="gray-labels">Username</label>
+						  <input type="username" id="username-input" required placeholder="Username" autocomplete="off"/>
+						  <label for="email" id="email-label" class="gray-labels">Email</label>
+						  <input type="email" spellcheck=false id="email-input" required placeholder="Email" autocomplete="off" />
+						  <label for="email" id="password-label" class="gray-labels">Password</label>
+						  <div class="password-input-container">
+							<input type="password" required placeholder="Password" id="password-input" autocomplete="off" />
+							<i class="fa fa-eye-slash"></i>
+						  </div>
+						  <button type="submit" class="submit">Login</button> 
+						</div>
+					  </form>
+					  <div class="alert-box-hidden">
+						<i class="fa fa-times x-icon"></i>
+						<p class="alert-message"></p>
+					  </div>
+				</div>
+			</div>
+
+			<div id="logged-in-container">
+
+				<section id="manage-pto">
+					
+					<div class="dropdown">
+						<div class="dropbtn">
+							<input type="text" id="search-box" placeholder="Select Employee" />
+						</div>
+						<i class="fa fa-times x-icon" id="search-x-icon"></i>
+						<div class="dropdown-content">
+							
+						</div>
+					  </div>
+
+
+					<div class="calendar">
+						<div class="calendar-header">
+							<span class="month-picker" id="month-picker">Mjesec</span>
+							<div class="year-picker">
+								<span class="year-change" id="prev-year">
+									<i class="fa fa-caret-left"></i>
+								</span>
+								<span id="year">2024</span>
+								<span class="year-change" id="next-year">
+									<i class="fa fa-caret-right"></i>
+								</span>
+							</div>
+						</div>
+						<div class="calendar-body">
+							<div class="calendar-week-day">
+								<div>Mon</div>
+								<div>Tue</div>
+								<div>Wed</div>
+								<div>Thu</div>
+								<div>Fri</div>
+								<div>Sat</div>
+								<div>Sun</div>
+							</div>
+							<div class="calendar-days"></div>
+						</div>
+						<div class="month-list"></div>
+					</div>
+					
+				</section>
+
+				<section id="display-pto">
+
+					<template id="pto-template">
+						<article class="pto" user-id="">
+							<div class="pto-header-icon-container">
+								<i class="fa fa-plus plus-icon"></i>
+							</div>
+							<div class="pto-main-content-container">
+								<h3>
+									<span class="pto-title">Ime i prezime</span>
+								</h3>
+			
+								<div class="past-pto hidden">
+									<span class="past-pto-label">Past PTO</span>
+
+								</div>
+
+								<div class="current-pto hidden">
+									<span class="current-pto-label">Present PTO</span>
+
+								</div>
+
+								<div class="upcoming-pto hidden">
+									<span class="upcoming-pto-label">Upcoming PTO</span>
+
+								</div>
+
+							</div>
+						</article>
+					</template>
+
+					<button id="create-pto-button">Create PTO</button>
+				</section>
+
+			</div>
+
+		</main>
+
+		<footer>@FESB Filip Čalić</footer>
+	</body>
+
+
+	<script src="scripts/cookies.js"></script>
+	<script src="scripts/search.js"></script>
+	<script src="scripts/calendar.js"></script>
+	<script src="scripts/pto.js"></script>
+	<script src="scripts/swag.js"></script>
+	<script src="scripts/login.js"></script>
+</html>

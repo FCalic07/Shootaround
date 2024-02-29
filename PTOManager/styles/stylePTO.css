@@ -1,0 +1,120 @@
+#display-pto {
+    width: 850px;
+    margin-left: 32%;
+}
+
+.pto {
+    width: 100%;
+	text-align: center;
+    padding: 0.5rem;
+	background-color: LIGHTGRAY;
+	position: relative;
+	border-radius: 5px;
+    margin-bottom: 2rem;
+	box-shadow: rgba(0, 0, 0, 0.47) 0px 3px 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.pto .plus-icon {
+    color: black;
+    font-size: larger;
+    float: left;
+    transition: 0.2s;
+}
+
+.plus-icon:hover {
+    color: red;
+}
+
+.pto-title {
+    font-size: larger;
+}
+
+.pto img {
+	width: 100%;
+	border-radius: 5px;
+	height: 8em;
+	object-fit: cover;
+    margin-bottom: 2px;
+}
+
+.pto-image{
+    position: relative;
+}
+
+.pto-image .x-icon {
+    color: red;
+    position: absolute;
+    right: 7px;
+    top: 5px;
+}
+
+.pto-image .x-icon:hover {
+    color: #ac3b61;
+}
+
+.past-pto, .current-pto, .upcoming-pto {
+    background-color: #c2c2c2;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 5px;
+    margin: 1rem;
+}
+
+.past-pto-label, .current-pto-label, .upcoming-pto-label {
+    display: block;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hidden {
+    display:none;
+}
+
+.pto-date {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    font-weight: bold;
+    color: #000000; /* Change the date text color */
+    background-color: rgba(255, 255, 255, 0.5); /* Add a semi-transparent white background */
+    padding: 0.2em 0.5em; /* Add padding to the date text */
+    border-radius: 8px; /* Add border radius to the date text background */
+}
+
+#create-pto-button {
+    display: none;
+    margin-left: 40%;
+    margin-top: 25%;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #123C69;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    height: 90px;
+    width: 200px;
+    overflow: visible;
+    text-align: center;
+}
+
+#create-pto-button:hover {
+  background: #F6F9FE;
+  color: #2c5785;
+}
+
+.pto img {
+    width: 100%;
+    border-radius: 5px;
+    height: 8em;
+    object-fit: cover;
+    opacity: 0.8;
+    filter: grayscale(25%); /* Add a slight gray filter */
+}
