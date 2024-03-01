@@ -198,6 +198,7 @@ function handlePlusIconClick(event){
 
     calendar.setAttribute('name', event.target.parentElement.parentElement.querySelector(".pto-title").innerText);
     calendar.setAttribute('user-id', event.target.parentElement.parentElement.getAttribute('user-id'));
+    calendar.classList.add('activity');
 
     calendarFlag = true;
 }
