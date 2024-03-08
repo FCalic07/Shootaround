@@ -362,6 +362,14 @@ template {
 		background-color: #EEE2DC; /* Adjust the padding for the header */
     }
 
+	.welcome-page h1{
+		font-size: 34px;
+	}
+
+	#sign-in-form {
+		width: 70%;
+	}
+
 	.welcome-page-after-login{
 		display: none;
 	}
@@ -390,4 +398,6 @@ template {
 		justify-content: center;
 		margin-left: 1rem;
 	}
+
+
 }

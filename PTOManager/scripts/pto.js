@@ -1,4 +1,4 @@
-let employees = [];
+const employees = [];
 
 //RENDER ALL PTOs
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -37,8 +37,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 });
 
+// Function to handle employee selection from dropdown menu
 function handleEmployeeSelected(event){
-    //check if there this employee has any ptos
+    // Flag to check if there are any PTOs for the selected employee
     let ptoFlag; 
 
 	const selectedEmployeeName = document.createElement("p");
@@ -94,6 +95,7 @@ function handleCreateButtonClick(e) {
     e.target.innerText = "Choose date";
 }
 
+// Function to create a new PTO entry
 function createPTO(name, id, startDate, endDate) {
     const displayContainer = document.getElementById("display-pto");
 
@@ -227,6 +229,7 @@ function handleXIconClick(event){
             const selectedbtn = document.querySelector(".selectedbtn");
             if(selectedbtn){
                 const createButton = document.getElementById("create-pto-button");
+                createButton.addEventListener('click', handleCreateButtonClick); //just in case
                 createButton.style.display = "block";
             }
         }

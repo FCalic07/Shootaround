@@ -16,7 +16,7 @@ document.getElementById('search-box').addEventListener('keyup', (e) => {
 
 const xIcon = document.querySelector("#search-x-icon");
 
-
+// Event listener to clear selected employee and reset dropdown menu
 xIcon.addEventListener('click', (e)=>{
 	const dropdownBtn = document.querySelector(".selectedbtn");
 	const selectedEmployee = e.target.parentElement.querySelector("p");
@@ -37,14 +37,14 @@ xIcon.addEventListener('click', (e)=>{
 	const createButton = document.getElementById("create-pto-button");
 	createButton.style.display = "none";
 
+	// Display all PTOs
 	const allPTOs = document.querySelectorAll('.pto');
-     
 	for (let i = 0; i < allPTOs.length; i++) {
 	   allPTOs[i].style.display = "flex";
 	}
 
+	// Reset calendar state
 	calendarFlag = false;
-
 	calendar.classList.remove('activity');
 	document.getElementById("create-pto-button").innerText = "Create PTO";
 });

@@ -1,5 +1,5 @@
 let calendarFlag = false;
-let calendar = document.querySelector('.calendar')
+const calendar = document.querySelector('.calendar')
 
 const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
@@ -10,29 +10,30 @@ isLeapYear = (year) => {
 getFebDays = (year) => {
     return isLeapYear(year) ? 29 : 28
 }
-
+// Function to generate the calendar for a given month and year
 generateCalendar = (month, year) => {
 
-    let calendar_days = calendar.querySelector('.calendar-days')
-    let calendar_header_year = calendar.querySelector('#year')
+    const calendar_days = calendar.querySelector('.calendar-days');
+    const calendar_header_year = calendar.querySelector('#year');
 
-    let days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    const days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-    calendar_days.innerHTML = ''
+    calendar_days.innerHTML = '';
 
-    let currDate = new Date();  
+    const currDate = new Date();  
 
-    let curr_month = `${month_names[month]}`
-    month_picker.innerHTML = curr_month
-    calendar_header_year.innerHTML = year
+    const curr_month = `${month_names[month]}`;
+    month_picker.innerHTML = curr_month;
+    calendar_header_year.innerHTML = year;
 
     // get first day of month
     
-    let first_day = new Date(year, month, 1);
-    let startingDay = (first_day.getDay() === 0) ? 6 : first_day.getDay() - 1;
-
+    const first_day = new Date(year, month, 1);
+    const startingDay = (first_day.getDay() === 0) ? 6 : first_day.getDay() - 1;
+    
+    // Loop through each day in the month and fill the calendar
     for (let i = 0; i < days_of_month[month] + startingDay; i++) {
-        let day = document.createElement('div');
+        const day = document.createElement('div');
         if (i >= startingDay) {
             day.classList.add('calendar-day-hover');
             day.innerHTML = i - startingDay + 1;
@@ -113,11 +114,11 @@ function calendarDayClick(event) {
 }
 
 
-let month_list = calendar.querySelector('.month-list')
+const month_list = calendar.querySelector('.month-list')
 
 //month names
 month_names.forEach((e, index) => {
-    let month = document.createElement('div')
+    const month = document.createElement('div')
     month.innerHTML = `<div data-month="${index}">${e}</div>`
     month.querySelector('div').onclick = () => {
         month_list.classList.remove('show')
@@ -127,16 +128,16 @@ month_names.forEach((e, index) => {
     month_list.appendChild(month)
 })
 
-let month_picker = calendar.querySelector('#month-picker')
+const month_picker = calendar.querySelector('#month-picker')
 
 month_picker.onclick = () => {
     month_list.classList.add('show')
 }
 
-let currDate = new Date()
+const currDate = new Date()
 
-let curr_month = {value: currDate.getMonth()}
-let curr_year = {value: currDate.getFullYear()}
+const curr_month = {value: currDate.getMonth()}
+const curr_year = {value: currDate.getFullYear()}
 
 generateCalendar(curr_month.value, curr_year.value)
 
