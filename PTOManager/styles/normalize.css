@@ -350,10 +350,15 @@ template {
 	display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 940px) {
     body {
         font-size: 14px; /* Adjust the font size for better readability on small screens */
     }
+
+	main {
+		margin-left: 0;
+		margin-right: 0;
+	}
 
     header {
 		font-size: small;
@@ -388,16 +393,19 @@ template {
 	}
 
 	#display-pto {
+		margin-left: 0;
 		margin-top: 27rem;
-		position: relative;
-		margin: 27rem 0;
-		width: 100%;
+		position: absolute;
+		width: 80%;
+	}
+
+	.pto-date {
+		width: max-content;
 	}
 
 	#create-pto-button {
 		justify-content: center;
 		margin-left: 1rem;
 	}
-
 
 }

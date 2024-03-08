@@ -103,8 +103,15 @@ function createPTO(name, id, startDate, endDate) {
     const allPTOContainers = document.querySelectorAll(".pto");
     for (let i = 0; i < allPTOContainers.length; i++) {
         if(allPTOContainers[i].getAttribute('user-id') == id){
+            //check if that exact same pto already exists perhaps
+            if(!ptoDuplicateCheck(allPTOContainers[i], startDate, endDate)){
             buildPTO(allPTOContainers[i], startDate, endDate);
             return;   
+            }
+            else{
+                alert("Exact PTO already exists.");
+                return;
+            }
         }
     }
 
@@ -194,6 +201,19 @@ function buildPTO(pto, startDate, endDate) {
         upcomingPTO.querySelector(".x-icon").addEventListener('click', handleXIconClick);
         upcomingPTOcontainer.appendChild(upcomingPTO);
     }
+}
+
+//function to see if it's a duplicate pto
+function ptoDuplicateCheck(ptoContainer, startDate, endDate) {
+    const newDate = `${startDate[0]}.${startDate[1]}.${startDate[2]} - ${endDate[0]}.${endDate[1]}.${endDate[2]}`;
+    const allDates = ptoContainer.querySelectorAll(".pto-date");
+
+    for (let i = 0; i < allDates.length; i++) {
+        if(allDates[i].innerText == newDate){
+            return true;
+        }
+    }
+    return false;
 }
 
 function handlePlusIconClick(event){
