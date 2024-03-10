@@ -110,7 +110,7 @@ function createPTO(name, id, startDate, endDate) {
             }
             else{
                 alert("Exact PTO already exists.");
-                return;
+                return "exists";
             }
         }
     }

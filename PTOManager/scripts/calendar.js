@@ -77,25 +77,25 @@ function calendarDayClick(event) {
         } 
         else {
             ptoEnd = choosenDate;
-            //easy way of "transfering" name and user-id
-            createPTO(calendar.getAttribute('name'), calendar.getAttribute('user-id'), ptoStart, ptoEnd);
 
+            //DONT STORE UNLESS IT'S NOT A DUPLICATE
+            let response = createPTO(calendar.getAttribute('name'), calendar.getAttribute('user-id'), ptoStart, ptoEnd);
+            if(!response){ 
+                const storage = {
+                    name: calendar.getAttribute('name'),
+                    id: calendar.getAttribute('user-id'),
+                    startDate: ptoStart,
+                    endDate: ptoEnd
+                };
+                const storedFormData = JSON.parse(localStorage.getItem('formData')) || [];
+
+                storedFormData.push(storage);
+    
+                localStorage.setItem('formData', JSON.stringify(storedFormData));
+            }
             //way of storing info in localStorage
-            const storage = {
-                name: calendar.getAttribute('name'),
-                id: calendar.getAttribute('user-id'),
-                startDate: ptoStart,
-                endDate: ptoEnd
-            };
-
             const createButton = document.getElementById("create-pto-button");
             createButton.style.display = "none";
-
-            const storedFormData = JSON.parse(localStorage.getItem('formData')) || [];
-
-            storedFormData.push(storage);
-
-            localStorage.setItem('formData', JSON.stringify(storedFormData));
 
             calendarFlag = false;
             console.log("pto end je " + ptoEnd);
@@ -103,7 +103,9 @@ function calendarDayClick(event) {
             calendar.classList.remove('activity');
             document.getElementById("create-pto-button").innerText = "Create PTO"
 
+            if(document.querySelector('.start-date')){  //in case month were switched
             document.querySelector('.start-date').classList.remove('start-date');
+            }
             //default
             ptoStart = undefined;
             ptoEnd = undefined;
@@ -113,8 +115,7 @@ function calendarDayClick(event) {
 
 }
 
-
-const month_list = calendar.querySelector('.month-list')
+const month_list = calendar.querySelector('.month-list');
 
 //month names
 month_names.forEach((e, index) => {
