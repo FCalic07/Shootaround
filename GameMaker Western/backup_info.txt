@@ -1,0 +1,9 @@
+Backup 08
+Finished video 12
+DATE: 11.1.2025. TIME:20:00
+-added EagleEye + spawner
+-crosshairs
+-esc menu
+-deadman animation
+
+
